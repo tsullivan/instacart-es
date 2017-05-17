@@ -1,0 +1,14 @@
+{
+  "name": "instacart",
+  "version": "1.0.0",
+  "description": "ingest the open-sourced instacart orders into elasticsearch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tim Sullivan",
+  "license": "ISC",
+  "dependencies": {
+    "sqlite3": "^3.1.8"
+  }
+}
