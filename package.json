@@ -1,5 +1,5 @@
 {
-  "name": "instacart",
+  "name": "instacart-es",
   "version": "1.0.0",
   "description": "ingest the open-sourced instacart orders into elasticsearch",
   "main": "index.js",
