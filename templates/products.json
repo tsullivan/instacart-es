@@ -12,6 +12,9 @@
   "mappings": {
     "doc": {
       "properties": {
+        "id": {
+          "type": "integer"
+        },
         "name": {
           "type": "text",
           "fields": {
