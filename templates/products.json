@@ -10,7 +10,7 @@
     }
   },
   "mappings": {
-    "products": {
+    "doc": {
       "properties": {
         "name": {
           "type": "text",
