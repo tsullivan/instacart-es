@@ -1,0 +1,57 @@
+{
+  "template": "instacart_products",
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "my_stop_analyzer": {
+          "type": "stop"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "products": {
+      "properties": {
+        "name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword"
+            },
+            "stop_analyzed": {
+              "type": "text",
+              "analyzer": "my_stop_analyzer",
+              "fielddata": true
+            }
+          }
+        },
+        "aisle": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword"
+            },
+            "stop_analyzed": {
+              "type": "text",
+              "analyzer": "my_stop_analyzer",
+              "fielddata": true
+            }
+          }
+        },
+        "department": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword"
+            },
+            "stop_analyzed": {
+              "type": "text",
+              "analyzer": "my_stop_analyzer",
+              "fielddata": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -9,6 +9,7 @@
   "author": "Tim Sullivan",
   "license": "ISC",
   "dependencies": {
+    "elasticsearch": "^13.0.1",
     "sqlite3": "3.1.8"
   }
 }
