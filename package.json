@@ -9,6 +9,7 @@
   "author": "Tim Sullivan",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.5.0",
     "elasticsearch": "13.0.1",
     "eslint": "3.19.0",
     "sqlite": "2.7.0"
