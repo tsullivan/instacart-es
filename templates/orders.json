@@ -1,0 +1,88 @@
+{
+  "template": "instacart_orders",
+  "settings": {
+    "number_of_shards": 2,
+    "number_of_replicas": 0,
+    "analysis": {
+      "analyzer": {
+        "my_stop_analyzer": {
+          "type": "stop"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "doc": {
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "user_id": {
+          "type": "integer"
+        },
+        "eval_set": {
+          "type": "keyword"
+        },
+        "order_number": {
+          "type": "integer"
+        },
+        "order_dow": {
+          "type": "integer"
+        },
+        "order_hour_of_day": {
+          "type": "integer"
+        },
+        "days_since_prior_order": {
+          "type": "integer"
+        },
+        "products": {
+          "type": "nested",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword"
+                },
+                "stop_analyzed": {
+                  "type": "text",
+                  "analyzer": "my_stop_analyzer",
+                  "fielddata": true
+                }
+              }
+            },
+            "aisle": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword"
+                },
+                "stop_analyzed": {
+                  "type": "text",
+                  "analyzer": "my_stop_analyzer",
+                  "fielddata": true
+                }
+              }
+            },
+            "department": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword"
+                },
+                "stop_analyzed": {
+                  "type": "text",
+                  "analyzer": "my_stop_analyzer",
+                  "fielddata": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
