@@ -33,7 +33,7 @@
           "type": "integer"
         },
         "days_since_prior_order": {
-          "type": "integer"
+          "type": "float"
         },
         "products": {
           "type": "nested",
