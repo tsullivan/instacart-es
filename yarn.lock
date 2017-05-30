@@ -181,10 +181,6 @@ cli-cursor@^1.0.1:
   dependencies:
     restore-cursor "^1.0.1"
 
-cli-meter@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/cli-meter/-/cli-meter-0.0.1.tgz#8673ffe78d8bfa44f240d26286b6676ad0347da4"
-
 cli-width@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-2.1.0.tgz#b234ca209b29ef66fc518d9b98d5847b00edf00a"

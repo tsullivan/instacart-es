@@ -35,6 +35,9 @@
         "days_since_prior_order": {
           "type": "float"
         },
+        "product_count": {
+          "type": "integer"
+        },
         "products": {
           "type": "nested",
           "properties": {
@@ -79,6 +82,12 @@
                   "fielddata": true
                 }
               }
+            },
+            "add_to_cart_order": {
+              "type": "integer"
+            },
+            "reordered": {
+              "type": "boolean"
             }
           }
         }
