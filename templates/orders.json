@@ -5,90 +5,56 @@
     "number_of_replicas": 0,
     "analysis": {
       "analyzer": {
-        "my_stop_analyzer": {
-          "type": "stop"
-        }
+        "my_stop_analyzer": { "type": "stop" }
       }
     }
   },
   "mappings": {
     "doc": {
       "properties": {
-        "id": {
-          "type": "integer"
+        "id": { "type": "integer" },
+        "user_id": { "type": "integer" },
+        "eval_set": { "type": "keyword" },
+        "order_number": { "type": "integer" },
+        "order_dow": { "type": "integer" },
+        "order_hour_of_day": { "type": "integer" },
+        "days_since_prior_order": { "type": "float" },
+        "products_total": { "type": "integer" },
+        "products_neworders": { "type": "integer" },
+        "products_reorders": { "type": "integer" },
+        "products_aisles": {
+          "type": "keyword",
+          "fields": {
+            "stop_analyzed": { "type": "text", "analyzer": "my_stop_analyzer", "fielddata": true }
+          }
         },
-        "user_id": {
-          "type": "integer"
+        "products_departments": {
+          "type": "keyword",
+          "fields": {
+            "stop_analyzed": { "type": "text", "analyzer": "my_stop_analyzer", "fielddata": true }
+          }
         },
-        "eval_set": {
-          "type": "keyword"
+        "product_names": {
+          "type": "keyword",
+          "fields": {
+            "stop_analyzed": { "type": "text", "analyzer": "my_stop_analyzer", "fielddata": true }
+          }
         },
-        "order_number": {
-          "type": "integer"
-        },
-        "order_dow": {
-          "type": "integer"
-        },
-        "order_hour_of_day": {
-          "type": "integer"
-        },
-        "days_since_prior_order": {
-          "type": "float"
-        },
-        "product_count": {
-          "type": "integer"
-        },
-        "products": {
+        "product_details": {
           "type": "nested",
           "properties": {
-            "id": {
-              "type": "integer"
-            },
+            "id": { "type": "integer" },
             "name": {
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "type": "keyword"
-                },
-                "stop_analyzed": {
-                  "type": "text",
-                  "analyzer": "my_stop_analyzer",
-                  "fielddata": true
-                }
-              }
+              "type": "keyword"
             },
             "aisle": {
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "type": "keyword"
-                },
-                "stop_analyzed": {
-                  "type": "text",
-                  "analyzer": "my_stop_analyzer",
-                  "fielddata": true
-                }
-              }
+              "type": "keyword"
             },
             "department": {
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "type": "keyword"
-                },
-                "stop_analyzed": {
-                  "type": "text",
-                  "analyzer": "my_stop_analyzer",
-                  "fielddata": true
-                }
-              }
+              "type": "keyword"
             },
-            "add_to_cart_order": {
-              "type": "integer"
-            },
-            "reordered": {
-              "type": "boolean"
-            }
+            "add_to_cart_order": { "type": "integer" },
+            "reordered": { "type": "boolean" }
           }
         }
       }
