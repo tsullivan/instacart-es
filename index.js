@@ -3,6 +3,7 @@ const process = require('process');
 const debug = require('debug')('init');
 const db = require('sqlite');
 const elasticsearch = require('elasticsearch');
+const { Meter } = require('./lib/meter');
 
 const {
   cleanProducts,
@@ -22,6 +23,8 @@ const {
 const DB_FILE = 'db/instacart';
 
 const init = () => {
+  const runMeter = new Meter('Run');
+
   debug('instacart-es init');
   debug('connecting to Elasticsearch');
 
@@ -60,6 +63,7 @@ const init = () => {
   })
   .then(() => {
     console.log('Done!');
+    runMeter.done();
   })
   .catch(err => {
     console.log({ err });
